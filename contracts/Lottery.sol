@@ -35,14 +35,14 @@ contract Lottery is  VRFConsumerBase, Ownable{
         keyhash = _keyhash;
     }
 
-      function enter() public payable {
+       function enter() public payable {
         // $50 minimum
         require(lottery_state == LOTTERY_STATE.OPEN);
         require(msg.value >= getEntranceFee(), "Not enough ETH!");
         players.push(msg.sender);
     }
 
-       function getEntranceFee() public view returns (uint256) {
+    function getEntranceFee() public view returns (uint256) {
         (, int256 price, , , ) = ethUsdPriceFeed.latestRoundData();
         uint256 adjustedPrice = uint256(price) * 10**10; // 18 decimals
         // $50, $2,000 / ETH
