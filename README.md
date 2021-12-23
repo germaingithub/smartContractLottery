@@ -7,3 +7,6 @@ How do we want to test this?
 1. `mainnet-fork`
 2. `development` with mocks
 3. `testnet`
+
+Processus from deployed Contract to End of Lottery
+https://www.youtube.com/watch?v=5Vwl58U3Ipc&ab_channel=GGV
